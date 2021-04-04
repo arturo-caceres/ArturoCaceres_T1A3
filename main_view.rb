@@ -12,16 +12,25 @@ puts " "
 puts " "
 puts " "
 puts " "
-puts "Welcome to game that gives grown ups to chance to prove that you are smarter than a 5th grader. "
+puts "Welcome to the game that gives grown ups to chance to prove that you are smarter than a 5th grader. "
 puts " "
 puts ""
 puts " Please select an option:"
 puts ""
 puts ""
-puts "Start Game"
+puts "Start Game (Press 1 for this option)"
 puts ""
-puts "About"
+puts "About (Press 2 for this option)"
 puts ""
-puts "Exit Game"
+puts "Exit Game (Press 3 for this option)"
 puts ""
 
+option = Integer(gets.chomp)
+
+if option == 1
+    puts "Here we go!"
+elsif option == 2
+    puts "Go to about"
+else option == 3
+    puts "Bye"
+end
