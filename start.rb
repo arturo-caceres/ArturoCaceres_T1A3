@@ -15,42 +15,57 @@ puts " "
 puts " Lets begin!"
 puts ""
 print " Please enter your name: "
-name = gets.chomp.capitalize
+user_name = gets.chomp.capitalize
 puts ""
-print " Thank you #{name}. If you could please enter your age too: "
+print " Please enter your age too: "
 age = gets.chomp
 puts ""
-puts " Thank you again #{name}! "
+puts " Thank you #{user_name}! "
 puts ""
 puts ""
-puts Rainbow("Instructions").green.underline
+puts Rainbow("Instructions").green.underline.bright
 puts ""
-puts "Every question is worth 10 points. Your goal #{name}, is to reach 100 points without failing a question. If you miss a question, sorry to tell you this, but you have to pick up a book and study my friend! READ MORE #{name.upcase!}! You will start from the beginning once you fail a question."
+puts " Every question is worth 10 points. Your goal is to reach 100 points without failing a question. "
+puts " If you fail, you will start from the beginning."
 puts " "
-puts "Are you ready to show everyone how easy these questions are?"
+puts " Are you ready to show everyone how easy these questions are?"
 puts " "
+puts ""
+puts "Current points = " + 0.to_s
 puts " "
-
-
-
-question = {
+puts ""
+game_questions = [{
     "question" => "how old are you?",
     "options" => ["op1","op2","op3","op5"],
     "answer" => "op1"
-}
+}, 
+{"question" => "age?",
+"options" => ["op1","op2","op3","op5"],
+"answer" => "op1"}]
 
-puts question["question"]
-puts question["options"]
+game_questions.each { |question_hash| 
+
+puts question_hash["question"] 
+puts ""
+puts question_hash["options"]
+puts ""
 
 user_input = Integer(gets.chomp)
-user_answer = question["options"][user_input-1]
-expected_answer = question["answer"]
-
+user_answer = question_hash["options"][user_input-1]
+expected_answer = question_hash["answer"]
+puts ""
 if user_answer == expected_answer 
-    print "correct"
+    puts "correct" 
+    
 else 
-    print "incorrect"
+    puts "incorrect, start again."
 end
+puts ""
+}
+
+
+
+
 
 # sumando puntos
 # hacer mas preguntas
