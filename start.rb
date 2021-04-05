@@ -31,7 +31,8 @@ puts " "
 puts " Are you ready to show everyone how easy these questions are?"
 puts " "
 puts ""
-puts "Current points = " + 0.to_s
+game_points = 0
+puts "Current points = " + game_points.to_s
 puts " "
 puts ""
 game_questions = [{
@@ -41,7 +42,10 @@ game_questions = [{
 }, 
 {"question" => "age?",
 "options" => ["op1","op2","op3","op5"],
-"answer" => "op1"}]
+"answer" => "op1"},
+{"question" => "Color of the sky?",
+"options" => ["op1","op2","op3","op5"],
+"answer" => "op3"}]
 
 game_questions.each { |question_hash| 
 
@@ -56,12 +60,21 @@ expected_answer = question_hash["answer"]
 puts ""
 if user_answer == expected_answer 
     puts "correct" 
-    
+    game_points += 10
+    if game_points == 30
+        puts "Con-drag-tulation! You are #1"
+        break
+    end
 else 
     puts "incorrect, start again."
+    game_points = 0
+    puts "Game over"
+    break
 end
+puts "Current points " + game_points.to_s 
 puts ""
 }
+
 
 
 
