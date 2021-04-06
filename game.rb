@@ -58,9 +58,11 @@ def start_game
             break
         end
     else 
-        puts "incorrect, start again."
+        puts "Incorrect. "
+        puts "Wow, at your age you should know this. It's time to grab a book my friend. Start again."
         game_points = 0
         puts "Game over"
+        puts ""
         break
     end
     puts "Current points " + game_points.to_s 
