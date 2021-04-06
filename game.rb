@@ -28,16 +28,16 @@ def start_game
     puts " "
     puts ""
     game_questions = [{
-        "question" => "how old are you?",
-        "options" => ["op1","op2","op3","op5"],
-        "answer" => "op1"
+        "question" => "In the sentence 'Questlove is a very good drummer. what part of speech is the word 'very'?",
+        "options" => ["Adverb","Noun","Verb","Adjective"],
+        "answer" => "Adverb"
     }, 
-    {"question" => "age?",
-    "options" => ["op1","op2","op3","op5"],
-    "answer" => "op1"},
-    {"question" => "Color of the sky?",
-    "options" => ["op1","op2","op3","op5"],
-    "answer" => "op3"}]
+    {"question" => "In our solar system, whick planet is farthest from the sun?",
+    "options" => ["Neptune","Pluto","Saturn","Uranus"],
+    "answer" => "Neptune"},
+    {"question" => "In miles, approximately how far is the earth from the sun?",
+    "options" => [86_000,90_000,94_000,98_000],
+    "answer" => 90_000}]
 
     game_questions.each { |question_hash| 
 
@@ -54,7 +54,7 @@ def start_game
         puts "correct" 
         game_points += 10
         if game_points == 30
-            puts "Con-drag-tulation! You are #1"
+            puts "Congratulations! You are #1"
             break
         end
     else 
