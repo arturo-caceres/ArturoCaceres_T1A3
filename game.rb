@@ -4,6 +4,21 @@
 def start_game
 
     puts " "
+    puts " "
+    puts " "
+    puts " "
+
+    puts Rainbow("          ▄▀█ █▀█ █▀▀   █▄█ █▀█ █░█   █▀ █▀▄▀█ ▄▀█ █▀█ ▀█▀ █▀▀ █▀█   ▀█▀ █░█ ▄▀█ █▄░█   ▄▀█   ").color(17, 168, 205).bright
+    puts Rainbow("          █▀█ █▀▄ ██▄   ░█░ █▄█ █▄█   ▄█ █░▀░█ █▀█ █▀▄ ░█░ ██▄ █▀▄   ░█░ █▀█ █▀█ █░▀█   █▀█   ").color(17, 168, 205).bright
+    puts ""
+    puts Rainbow("                                  █▀ ▀█▀ █░█  █▀▀ █▀█ ▄▀█ █▀▄ █▀▀ █▀█ ▀█").color(17, 168, 205).bright
+    puts Rainbow("                                  ▄█ ░█░ █▀█  █▄█ █▀▄ █▀█ █▄▀ ██▄ █▀▄ ░▄").color(17, 168, 205).bright
+
+    puts " "
+    puts " "
+    puts " "
+    puts " "
+    puts " "
     puts " Lets begin!"
     puts ""
     print " Please enter your name: "
@@ -28,11 +43,11 @@ def start_game
     puts " "
     puts ""
     game_questions = [{
-        "question" => "In the sentence 'Questlove is a very good drummer. what part of speech is the word 'very'?",
+        "question" => "In the sentence 'Questlove is a very good drummer'. What part of speech is the word 'very'?",
         "options" => ["Adverb","Noun","Verb","Adjective"],
         "answer" => "Adverb"
     }, 
-    {"question" => "In our solar system, whick planet is farthest from the sun?",
+    {"question" => "In our solar system, which planet is farthest from the sun?",
     "options" => ["Neptune","Pluto","Saturn","Uranus"],
     "answer" => "Neptune"},
     {"question" => "In miles, approximately how far is the earth from the sun?",
@@ -52,6 +67,7 @@ def start_game
     puts ""
     if user_answer == expected_answer 
         puts "correct" 
+        puts "" 
         game_points += 10
         if game_points == 30
             puts "Congratulations! You are #1"
@@ -59,9 +75,10 @@ def start_game
         end
     else 
         puts "Incorrect. "
-        puts "Wow, at your age you should know this. It's time to grab a book my friend. Start again."
-        game_points = 0
-        puts "Game over"
+        puts "Wow, at your age you should know this. It's time to grab a book my friend. "
+        puts "" 
+        game_points = 0 
+        puts "Game over. Start again."
         puts ""
         break
     end
