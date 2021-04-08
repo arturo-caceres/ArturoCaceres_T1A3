@@ -16,12 +16,12 @@ puts ""
 puts Rainbow("                                  █▀ ▀█▀ █░█  █▀▀ █▀█ ▄▀█ █▀▄ █▀▀ █▀█ ▀█").color(17, 168, 205).bright
 puts Rainbow("                                  ▄█ ░█░ █▀█  █▄█ █▀▄ █▀█ █▄▀ ██▄ █▀▄ ░▄").color(17, 168, 205).bright
 
+puts " 
 
-puts " "
-puts " "
 
-puts " "
-puts " "
+
+
+"
 puts "Welcome to the game that gives grown ups to chance to prove that you are smarter than a 5th grader. "
 puts " "
 puts ""
