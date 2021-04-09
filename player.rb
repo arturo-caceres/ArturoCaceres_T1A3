@@ -11,5 +11,14 @@ class Player
         return "Thank you #{@age}year old #{@name}"
     end
 
+    def get_loser_message
+        if @age >= 7 && @age <= 17
+            return "Stay in school kid!" 
+        end
+    end
+
+
+
+
 end
 
