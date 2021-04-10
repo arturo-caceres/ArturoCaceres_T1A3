@@ -6,6 +6,7 @@ require_relative "./about.rb"
 require_relative "./game.rb"
 
 keep_playing = true
+prompt = TTY::Prompt.new
 
 while keep_playing
   print_title
@@ -15,7 +16,6 @@ while keep_playing
 
 
 "
-  prompt = TTY::Prompt.new
   choices = %w(Start About Exit)
 
   choices = [
@@ -26,7 +26,9 @@ while keep_playing
   user_choice = prompt.select(" Please select an option: ", choices)
 
   if user_choice == "Start"
-    start_game
+    start_game(prompt)
+    # Break underneath is to exit from the game as player has won.
+    break
   elsif user_choice == "About"
     more_option = about_game(prompt)
     if more_option == "Exit"

@@ -4,7 +4,7 @@ require_relative "./questions.rb"
 require_relative "./player.rb"
 require_relative "./title.rb"
 
-def start_game
+def start_game(prompt)
   print_title
 
   puts " Lets begin!
@@ -35,9 +35,9 @@ def start_game
   puts "
   "
 
-  continue_game = 1
+  continue_game = "Try again!"
   game_points = 0
-  while game_points < 30 && continue_game == 1
+  while game_points < 30 && continue_game == "Try again!"
     puts Rainbow("Instructions").green.underline.bright
     puts ""
     puts " Every question is worth 10 points. Your goal is to reach 100 points without failing a question. "
@@ -51,17 +51,12 @@ def start_game
     puts " Current points = " + game_points.to_s
     puts " 
     "
-    prompt = TTY::Prompt.new
 
     Questions::GAME_QUESTIONS.each { |question_hash|
-      puts question_hash["question"]
-      puts ""
-      puts question_hash["options"]
+      user_answer = prompt.select(question_hash["question"], question_hash["options"])
+
       puts "
         "
-
-      user_input = Integer(gets.chomp)
-      user_answer = question_hash["options"][user_input - 1]
       expected_answer = question_hash["answer"]
 
       if user_answer == expected_answer
@@ -77,23 +72,25 @@ def start_game
         puts "Incorrect. "
         puts p1.get_loser_message
         game_points = 0
-        puts "Game over. Start again.
+        puts "Game over.
             
             "
 
-        puts Rainbow("    Do you want to try again (1) or exit (2)?").color(255, 215, 0).bright
-        continue_game = Integer(gets.chomp)
+        continue_game = prompt.select("What would you like to do next?", [{ name: "Try again!" }, { name: "Exit Game" }])
 
-        if continue_game == 1
+        # puts Rainbow("    Do you want to try again (1) or exit (2)?").color(255, 215, 0).bright
+        # continue_game = Integer(gets.chomp)
+
+        if continue_game == "Try again!"
           puts `clear`
-          Questions
-        else continue_game == 2
+        else continue_game == "Exit Game"
+          puts "
+          "
           puts Rainbow("       █▀ █░█ ▄▀█ █▀▄▀█ █▀▀   █▀█ █▄░█   █▄█ █▀█ █░█ █  ").color(255, 0, 0).bright
           puts Rainbow("       ▄█ █▀█ █▀█ █░▀░█ ██▄   █▄█ █░▀█   ░█░ █▄█ █▄█ ▄  ").color(255, 0, 0).bright
           puts "
-   
                 
-                "         end
+              "         end
         break
       end
       puts "Current points " + game_points.to_s
