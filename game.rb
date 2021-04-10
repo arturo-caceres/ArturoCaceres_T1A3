@@ -1,5 +1,3 @@
-require "tty-prompt"
-
 require_relative "./questions.rb"
 require_relative "./player.rb"
 require_relative "./title.rb"
@@ -77,9 +75,6 @@ def start_game(prompt)
             "
 
         continue_game = prompt.select("What would you like to do next?", [{ name: "Try again!" }, { name: "Exit Game" }])
-
-        # puts Rainbow("    Do you want to try again (1) or exit (2)?").color(255, 215, 0).bright
-        # continue_game = Integer(gets.chomp)
 
         if continue_game == "Try again!"
           puts `clear`

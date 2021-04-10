@@ -1,3 +1,5 @@
+require "rainbow"
+
 def print_title
   puts `clear`
   puts " 

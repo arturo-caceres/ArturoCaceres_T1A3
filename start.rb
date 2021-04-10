@@ -1,4 +1,3 @@
-require "rainbow"
 require "tty-prompt"
 
 require_relative "./title.rb"
@@ -12,12 +11,10 @@ while keep_playing
   print_title
 
   puts "Welcome to the game that gives grown ups to chance to prove that you are smarter than a 5th grader. "
-  puts " 
+  puts "
 
 
 "
-  choices = %w(Start About Exit)
-
   choices = [
     { name: "Start" },
     { name: "About" },

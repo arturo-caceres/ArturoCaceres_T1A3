@@ -1,5 +1,3 @@
-require "./game.rb"
-
 class Player
   def initialize(name, age)
     @name = name
