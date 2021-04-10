@@ -1,56 +1,58 @@
-require 'rainbow'
+require "rainbow"
+require "tty-prompt"
 
 require_relative "./about.rb"
 require_relative "./game.rb"
 
+keep_playing = true
 
-puts " "
-puts " "
-puts " "
-puts " "
-
-
-puts Rainbow("          ▄▀█ █▀█ █▀▀   █▄█ █▀█ █░█   █▀ █▀▄▀█ ▄▀█ █▀█ ▀█▀ █▀▀ █▀█   ▀█▀ █░█ ▄▀█ █▄░█   ▄▀█   ").color(17, 168, 205).bright
-puts Rainbow("          █▀█ █▀▄ ██▄   ░█░ █▄█ █▄█   ▄█ █░▀░█ █▀█ █▀▄ ░█░ ██▄ █▀▄   ░█░ █▀█ █▀█ █░▀█   █▀█   ").color(17, 168, 205).bright
-puts ""
-puts Rainbow("                                  █▀ ▀█▀ █░█  █▀▀ █▀█ ▄▀█ █▀▄ █▀▀ █▀█ ▀█").color(17, 168, 205).bright
-puts Rainbow("                                  ▄█ ░█░ █▀█  █▄█ █▀▄ █▀█ █▄▀ ██▄ █▀▄ ░▄").color(17, 168, 205).bright
-
-puts " 
-
+while keep_playing
+  puts `clear`
+  puts " 
 
 
 
 "
-puts "Welcome to the game that gives grown ups to chance to prove that you are smarter than a 5th grader. "
-puts " "
-puts ""
-puts " Please select an option:"
-puts ""
-puts ""
-puts "Start Game (Press 1 for this option)"
-puts ""
-puts "About (Press 2 for this option)"
-puts ""
-puts "Exit Game (Press 3 for this option)"
-puts ""
 
-option = Integer(gets.chomp)
+  puts Rainbow("          ▄▀█ █▀█ █▀▀   █▄█ █▀█ █░█   █▀ █▀▄▀█ ▄▀█ █▀█ ▀█▀ █▀▀ █▀█   ▀█▀ █░█ ▄▀█ █▄░█   ▄▀█   ").color(17, 168, 205).bright
+  puts Rainbow("          █▀█ █▀▄ ██▄   ░█░ █▄█ █▄█   ▄█ █░▀░█ █▀█ █▀▄ ░█░ ██▄ █▀▄   ░█░ █▀█ █▀█ █░▀█   █▀█   ").color(17, 168, 205).bright
+  puts ""
+  puts Rainbow("                                  █▀ ▀█▀ █░█  █▀▀ █▀█ ▄▀█ █▀▄ █▀▀ █▀█ ▀█").color(17, 168, 205).bright
+  puts Rainbow("                                  ▄█ ░█░ █▀█  █▄█ █▀▄ █▀█ █▄▀ ██▄ █▀▄ ░▄").color(17, 168, 205).bright
 
-if option == 1
+  puts " 
+
+_____________________________________________________________________________________________________
+
+
+"
+  puts "Welcome to the game that gives grown ups to chance to prove that you are smarter than a 5th grader. "
+  puts " 
+
+
+"
+  prompt = TTY::Prompt.new
+  choices = %w(Start About Exit)
+
+  choices = [
+    { name: "Start" },
+    { name: "About" },
+    { name: "Exit" },
+  ]
+  user_choice = prompt.select(" Please select an option: ", choices)
+
+  if user_choice == "Start"
     start_game
-elsif option == 2
-    about_game 
-else option == 3
-    puts "Bye"
+  elsif user_choice == "About"
+    more_option = about_game(prompt)
+    if more_option == "Exit"
+      keep_playing = false
+      puts "
+      Thank you. See you soon.\n\n\n"
+    end
+  elsif user_choice == "Exit"
+    puts "
+    Thank you. See you soon.\n\n\n"
+    keep_playing = false
+  end
 end
-
-
-
-
-
-
-# sumando puntos
-# hacer mas preguntas
-# arreglo de preguntas
-# como iteramos sobre el arreglo
