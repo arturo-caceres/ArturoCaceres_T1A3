@@ -1,31 +1,15 @@
 require "rainbow"
 require "tty-prompt"
 
+require_relative "./title.rb"
 require_relative "./about.rb"
 require_relative "./game.rb"
 
 keep_playing = true
 
 while keep_playing
-  puts `clear`
-  puts " 
+  print_title
 
-
-
-"
-
-  puts Rainbow("          ▄▀█ █▀█ █▀▀   █▄█ █▀█ █░█   █▀ █▀▄▀█ ▄▀█ █▀█ ▀█▀ █▀▀ █▀█   ▀█▀ █░█ ▄▀█ █▄░█   ▄▀█   ").color(17, 168, 205).bright
-  puts Rainbow("          █▀█ █▀▄ ██▄   ░█░ █▄█ █▄█   ▄█ █░▀░█ █▀█ █▀▄ ░█░ ██▄ █▀▄   ░█░ █▀█ █▀█ █░▀█   █▀█   ").color(17, 168, 205).bright
-  puts ""
-  puts Rainbow("                                  █▀ ▀█▀ █░█  █▀▀ █▀█ ▄▀█ █▀▄ █▀▀ █▀█ ▀█").color(17, 168, 205).bright
-  puts Rainbow("                                  ▄█ ░█░ █▀█  █▄█ █▀▄ █▀█ █▄▀ ██▄ █▀▄ ░▄").color(17, 168, 205).bright
-
-  puts " 
-
-_____________________________________________________________________________________________________
-
-
-"
   puts "Welcome to the game that gives grown ups to chance to prove that you are smarter than a 5th grader. "
   puts " 
 

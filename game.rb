@@ -1,18 +1,11 @@
-require "./questions.rb"
-require "./player.rb"
+require "tty-prompt"
+
+require_relative "./questions.rb"
+require_relative "./player.rb"
+require_relative "./title.rb"
 
 def start_game
-  puts `clear`
-
-  puts Rainbow("          ▄▀█ █▀█ █▀▀   █▄█ █▀█ █░█   █▀ █▀▄▀█ ▄▀█ █▀█ ▀█▀ █▀▀ █▀█   ▀█▀ █░█ ▄▀█ █▄░█   ▄▀█   ").color(17, 168, 205).bright
-  puts Rainbow("          █▀█ █▀▄ ██▄   ░█░ █▄█ █▄█   ▄█ █░▀░█ █▀█ █▀▄ ░█░ ██▄ █▀▄   ░█░ █▀█ █▀█ █░▀█   █▀█   ").color(17, 168, 205).bright
-  puts ""
-  puts Rainbow("                                  █▀ ▀█▀ █░█  █▀▀ █▀█ ▄▀█ █▀▄ █▀▀ █▀█ ▀█").color(17, 168, 205).bright
-  puts Rainbow("                                  ▄█ ░█░ █▀█  █▄█ █▀▄ █▀█ █▄▀ ██▄ █▀▄ ░▄").color(17, 168, 205).bright
-
-  puts " 
-    
-    "
+  print_title
 
   puts " Lets begin!
     "
@@ -58,6 +51,8 @@ def start_game
     puts " Current points = " + game_points.to_s
     puts " 
     "
+    prompt = TTY::Prompt.new
+
     Questions::GAME_QUESTIONS.each { |question_hash|
       puts question_hash["question"]
       puts ""
