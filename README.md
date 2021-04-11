@@ -35,11 +35,9 @@ When you fail a question, you will get a prompt if you want to try again or if y
 
 Very easily, the user will know how rusty they are with the material they show fifth-grader nowadays. The main goal of creating this application not only was to interact with a funny game, but also to make the user realize how easy it is to forget basic knowledge.
 
-**Target audience**
+**Target audience and the how they will use it.**
 
-The target audience for this application is anyone between the ages of 7 and 99 years old. Anyone who is interested in a challenge, is welcome to play this game.
-
-By going through all the options the user will use this application to gain new knowledge if they fail the question and decide to try again and find out what the answer to the question is.
+The target audience for this application is anyone between the ages of 7 and 99 years old. Anyone who is interested in a challenge, is welcome to play this game. By going through all the questions; the user will use this application to gain new knowledge, if they fail the question and decide to try again, and find out what the answer to the question is.
 
 ## **Features**
 
@@ -160,10 +158,6 @@ def get_loser_message
 
 By using TTY-prompt, the user only needs to choose between options, minimizing errors. Errors are being displayed within while's, so that the user will have to input the correct data, like for example age. The user can only write an age between 7 to 99. If they write any other value, they will get an error message.
 
-## **Testing**
-
-![Sitemap of project](docs/testing.png)
-
 ## **User Experience and Interaction**
 
 ### How the user will find out how to interact with each feature
@@ -202,11 +196,15 @@ Labels were also created to prioritize through cards.
 
 Application's [Trello Board](https://trello.com/b/d4DiFUSZ)
 
+## **Testing**
+
+![Sitemap of project](docs/testing.png)
+
 ## Install
 
 Install the prerequisites:
 
-By running the following commands, you will not need to worried with the versions on your programs/gems.
+By running the following commands, you will not need to worry with the versions on your programs/libraries/gems.
 
 1. `Clone` repo:
 
