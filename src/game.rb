@@ -63,7 +63,10 @@ def start_game(prompt)
         game_points += 10
         if game_points == 100
           puts game_points.to_s
-          puts "Congratulations! You are #1"
+          puts "Congratulations #{user_name}! You are #1"
+          puts ""
+          puts "Truly a genius! Thank you for proving you are smarter then a 5th grader. Now, are you smarter than a 6th grader? Lets find out soon! "
+          puts ""
           break
         end
       else

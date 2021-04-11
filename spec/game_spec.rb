@@ -1,23 +1,6 @@
 require "../src/player.rb"
 
-# RSpec.describe "Player" do
-#     subject { Player.new }
-
-#     it "should respond to name" do
-#         expect(subject).to respond_to :name
-#     end
-
-#     describe "name" do
-#         it "should not be nil" do
-#             expect(subject.name).not_to be_nil
-#         end
-
-#         it "should be assign on initilisation if provided" do
-#             player = Player.new "Arturo"
-#             expect(player.name).to eq "Arturo"
-#         end
-#     end
-# end
+# Testing features
 
 Player = Struct.new(:name, :age)
 

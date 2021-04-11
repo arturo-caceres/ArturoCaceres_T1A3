@@ -2,11 +2,11 @@
 
 ## ArturoCaceres_T1A3 - Terminal App
 
----
-
 ### **Software Development Plan**
 
 ---
+
+ArturoCaceres - [Terminal App](https://github.com/arturo-caceres/ArturoCaceres_T1A3)
 
 **Description of the application**
 
@@ -31,10 +31,11 @@ When you fail a question, you will get a prompt if you want to try again or if y
 
 ![Sitemap of project](docs/view_4.png)
 
-<strong>Problem it will solve</strong>
+**Problem it will solve**
+
 Very easily, the user will know how rusty they are with the material they show fifth-grader nowadays. The main goal of creating this application not only was to interact with a funny game, but also to make the user realize how easy it is to forget basic knowledge.
 
-<strong>Target audience</strong>
+**Target audience**
 
 The target audience for this application is anyone between the ages of 7 and 99 years old. Anyone who is interested in a challenge, is welcome to play this game.
 
@@ -159,6 +160,24 @@ def get_loser_message
 
 By using TTY-prompt, the user only needs to choose between options, minimizing errors. Errors are being displayed within while's, so that the user will have to input the correct data, like for example age. The user can only write an age between 7 to 99. If they write any other value, they will get an error message.
 
+## **Testing**
+
+![Sitemap of project](docs/testing.png)
+
+## **User Experience and Interaction**
+
+### How the user will find out how to interact with each feature
+
+The application is very intuitive, so when the user sees the first view of the application, it will a smooth transition to glide through. A prompting tool has been implemented throughout the application. By just selecting options with arrow keys and pressing enter to select an option, the user should not encounter any type of difficulty, as it is very simplified for a better user experience.
+
+### How the user will find out how to interact with each feature
+
+By just entering the user's name and age, the application will run all features and give the user a personalized experience. By answering all answers correctly or by just failing as well, the user's name will show throughout the application.
+
+### How errors will be handled and displayed to the user
+
+The user is limited to what they should or shouldn't do, they have been given the essential tools to explore through the application without causing errors. The tools utilized for accomplishing pertinent limitations are restrictive conditions and conditional loops. For example, if the user attempts to write an age less than 7 or greater than 99, a condition will not allow this and a message will prompt asking to only add permitted values.
+
 ## **Control Flow**
 
 This is the first draft of the application:
@@ -170,3 +189,56 @@ Final control flow:
 With a a couple of changes and inputs, this was the final draft.
 
 ![Sitemap of project](docs/draft_2.png)
+
+# Implementation Plan
+
+The project management system Trello, was used to plan manage the project. Firstly all Requirements were added as an individual cards. After designing the the control flow of the application, and reading through all the requirements, the coding of the application was next.
+
+![Sitemap of project](docs/trello_1.png)
+
+Labels were also created to prioritize through cards.
+
+![Sitemap of project](docs/trello_2.png)
+
+Application's [Trello Board](https://trello.com/b/d4DiFUSZ)
+
+## Install
+
+Install the prerequisites:
+
+By running the following commands, you will not need to worried with the versions on your programs/gems.
+
+1. `Clone` repo:
+
+```Ruby
+git clone https://github.com/arturo-caceres/ArturoCaceres_T1A3.git
+```
+
+2. For the installation of `bundler` and dependencies run:
+
+```Ruby
+sh install.sh
+```
+
+3. After `bundler` has been installed, to start application please run:
+
+```Ruby
+sh start.sh
+```
+
+**How to use?**
+
+1. Please select `Start` to begin the game.
+2. Enter your Name and Age.
+3. Read the Instructions and select the correct answer.
+4. Navigate through the answers by using the arrow keys on your keyboard followed by enter to make your selection
+5. Win the game without making a mistake.
+
+## References
+
+1. Ruby-Doc, April 2021, [Site](https://ruby-doc.com/)
+2. Ruby Gems. April 2021, [Site](https://rubygems.org/)
+3. Bundler, Getting started. 15 Feb 2021 [Site](https://bundler.io/)
+4. Brain Quest Workbook - Grade 5. By Bridget Heos, Matt Rockefeller. 2015
+
+## **Enjoy the game and show everyone how smart you are by winning!**
