@@ -162,7 +162,11 @@ By using TTY-prompt, the user only needs to choose between options, minimizing e
 ## **Control Flow**
 
 This is the first draft of the application:
+
 ![Sitemap of project](docs/draft_1.jpg)
 
 Final control flow:
+
+With a a couple of changes and inputs, this was the final draft.
+
 ![Sitemap of project](docs/draft_2.png)
